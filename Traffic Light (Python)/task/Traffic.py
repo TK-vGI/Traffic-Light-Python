@@ -1,16 +1,18 @@
 class Traffic:
     def __init__(self, roads:int, interval:int) -> None:
-        self.road = roads
+        self.roads = roads
         self.interval = interval
 
-    @staticmethod
-    def add_road() -> None:
+    def add_road(self) -> None:
+        self.roads += 1
         print("Road added")
 
-    @staticmethod
-    def delete_road() -> None:
-        print("Road deleted")
+    def delete_road(self) -> None:
+        if self.roads > 1:
+            self.roads -= 1
+            print("Road deleted")
+        else:
+            print("Cannot delete: At least one road is required")
 
-    @staticmethod
-    def open_system() -> None:
+    def open_system(self) -> None:
         print("System opened")
